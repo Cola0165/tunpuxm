@@ -1,0 +1,511 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/head.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+    <title>安顺屯堡</title>
+    <style>
+        .col-sm-6{
+            padding:0px!important
+        }
+        
+        body{font-family: '微软雅黑';}
+        /* .header-info
+        {
+            float: right;
+            margin-top: 15px;
+            margin-left: 80px;
+        } */
+/* header nav ul > .dropDown > ul{position:absolute;display:none;} */
+/* header nav > ul > li{float:left;} */
+.carousel-inner .big {
+      width: 100%;
+      position: relative;
+  }
+  .carousel-inner .xieqie{
+    position: absolute;z-index: 1;width: 60%;height: 100%;
+  }
+  .news{
+    padding-top: 40px;
+    width: 72%;
+    margin: 0 auto;
+  }
+  .news li{
+      float: left;
+      width: 33%;  
+  }
+  .news .date{
+    background-color: #D3D3D3;width: 80px;height: 80px;text-align: center;color:#767777;box-shadow: 5px 5px 10px gray;
+    float: left;
+    padding-top: 0.5em;
+  }
+  .news .wenzi{
+    color: gray;margin-left: 100px;
+    font-size: 1.2vw;
+  }
+  .middle{
+      width: 72%;
+      margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+    }
+    .middle a{color: #494949;}
+    .middle>.image>img{
+        margin-top: 40px;
+        width: 100%;
+    }
+    .middle>.image>.tbsy>div{
+        float: left;
+        width: 25%;
+    }
+    .middle>.image>.tbsy>div>img{
+        width: 40%;
+    }
+    .middle>.image>.tbsy>div>a{
+        position: relative;color: white;font-family: '隶书';font-size: 1.2vw;bottom: 3.7vw;
+    }
+    .middle>.image>.tbsy>div>a:hover{
+        color: gray;
+        text-decoration: none;
+    }
+    
+    .middle>.text{font-size: 18px;
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-bottom: 40px;
+    letter-spacing: 1px;
+line-height: 32px;
+color: gray;}
+.title>h4{color: gray;}
+.three img{margin-top: 40px;width: 100%;padding:0 5%;}
+.three>li{float: left;
+width: 32%;
+}
+.three_p{
+    font-size: 18px;
+    letter-spacing: 1px;
+    padding:0 1%;
+    color: gray;}
+    .icon img{margin-top: 40px;width: 100%;padding:0 5%;}
+    .icon>li{display: inline-block;
+        vertical-align: top;
+    width: 15%;}
+        @media screen and (max-width:800px) {
+            .three>li{
+width: 100%;
+}
+.icon>li{
+        
+    width: 40%;}
+    .about{display: none;}
+    .foot-nav{display: none;}
+    .carousel-caption{display: none;}
+        
+        .news li{
+      
+      width: 100%;
+  }
+  .logo{width: 25px;
+            margin-left: 0px;
+        }
+}
+.middle {
+  opacity: 0;
+  transition: all .10s ease;
+  width: 1000px;
+}
+
+.middle.visible {
+  opacity: 1;
+}
+.middle.row{
+	width: 1000px;
+}
+    </style>
+    <script>
+        $(document).on("scroll", function () {
+  var pageTop = $(document).scrollTop()
+  var pageBottom = pageTop + $(window).height() - 20
+  var tags = $(".middle")
+
+  for (var i = 0; i < tags.length; i++) {
+    var tag = tags[i]
+
+    if ($(tag).position().top < pageBottom) {
+      $(tag).addClass("visible")
+    } else {
+      $(tag).removeClass("visible")
+    }
+  }
+});
+    </script>
+</head>
+<body>
+    <header>
+        <div class="head">
+            
+            <!-- <div class="header-info">
+                <ul>
+                    <li>
+                        12345678987
+                    </li>
+                    <li>
+    
+                    </li>
+                </ul>
+            </div> -->
+            <script>
+              $(function () {
+            dropdownOpen();
+        });
+        function dropdownOpen(){
+            $('.dropdown').mouseover(function(){
+                $(this).addClass('show');
+                $(this).find(".dropdown-menu").addClass('show');
+            }).mouseout(function(){
+                $(this).find(".dropdown-menu").removeClass('show');
+                $(this).removeClass('show');
+            });
+        }
+            </script>
+                
+            <nav class="navbar navbar-expand-sm navbar-dark">
+                <div>
+                    <a href="index.html">
+                        <img src="images/LOGO1.png" class="logo">
+                    </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li>
+                        <a href="index.html" class="">首页</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="" class="" data-toggle="dropdown">屯堡概览</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="tbgl/wenhua.html" class="dropdown-item">村史文化</a>
+                            </li>
+                            <li>
+                                <a href="tbgl/chanpin.html" class="dropdown-item">优质农特产品</a>
+                            </li>
+                            <!--<li>
+                                <a href="tbgl/jzyg.html" class="dropdown-item">建制沿革</a>
+                            </li>-->
+                        </ul>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="" class="" data-toggle="dropdown">线上文化馆</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="szwh/stg.html" class="dropdown-item">视听馆</a>
+                            </li>
+                            <li>
+                                <a href="szwh/zbj.html" class="dropdown-item">直播间</a>
+                            </li>
+                            <li>
+                                <a href="szwh/jlsh.html" class="dropdown-item">记录生活</a>
+                            </li>
+                            <!-- <li>
+                                <a href="szwh/xtdh.html" class="dropdown-item">屯堡动画</a>
+                            </li> -->
+                        </ul>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="" class="" data-toggle="dropdown">玩转屯堡</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="wztb/jtzn.html" class="dropdown-item">交通指南</a>
+                            </li>
+                           <!-- <li>
+                                <a href="wztb/dtdh.html" class="dropdown-item">地图导航</a>
+                            </li>-->
+                            <li>
+                                <a href="wztb/chanpin.html" class="dropdown-item">屯堡美食</a>
+                            </li>
+                            <li>
+                                <a href="wztb/minsu.html" class="dropdown-item">民宿</a>
+                            </li>
+                            
+                            <li>
+                                <a href="wztb/xxhd.html" class="dropdown-item">线下活动</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="" class="" data-toggle="dropdown">屯堡文创</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="tbwc/wccp.html" class="dropdown-item">文创产品</a>
+                            </li>
+                            <!--<li>
+                                <a href="tbwc/xtbz.html" class="dropdown-item">屯堡壁纸</a>
+                            </li>-->
+                        </ul>
+                    </li>
+                   <!-- <li class="dropdown active">
+                        <a href="" class="" data-toggle="dropdown">服务优化</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="fwyh/ykjy.html" target="_blank" class="dropdown-item">游客建议</a>
+                            </li>
+                            <li>
+                                <a href="fwyh/ywjd.html" target="_blank" class="dropdown-item">疑问解答</a>
+                            </li>
+                        </ul>
+                    </li>-->
+                    <li class="dropdown active">
+                        <a href="" class="" data-toggle="dropdown">屯堡治理</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="xczl/czgg.html" class="dropdown-item">村中公告</a>
+                            </li>
+                            <li>
+                                <a href="xczl/zfwjxc.html" class="dropdown-item">政府文件宣传</a>
+                            </li>
+                            <li>
+                                <a href="xczl/crcmzs.html" class="dropdown-item">村容村貌展示</a>
+                            </li>
+                            <li>
+                                <a href="xczl/cmyjsj.html" class="dropdown-item">村民意见收集</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            </nav>
+        </div>
+        
+    </header>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+            <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+            <li data-target="#myCarousel" data-slide-to="3" class=""></li>
+        </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+			
+             <div>
+              <!--<img src="images/pipa.png" class="xieqie">-->
+                <img src="images/20240410220410.jpg" class="big">
+            </div>   
+        </div>
+        <div class="carousel-item" class="xieqie">
+            <!-- <img src="images/pipa.png" class="xieqie">-->
+        <img src="images/20240410220421.png" class="big">
+        </div>
+        <div class="carousel-item" class="xieqie">
+            <!-- <img src="images/pipa.png" class="xieqie">-->
+            <img src="images/20240410220448.jpg" class="big">
+        </div>
+        <div class="carousel-item" class="xieqie">
+            <!-- <img src="images/pipa.png" class="xieqie">-->
+            <img src="images/20240410220456.jpg" class="big">
+        </div>
+    </div>
+    <div class="carousel-caption">
+        <div>
+            <div style="line-height: 40px;text-align: left;position:absolute;bottom: 50%;">
+               <!--  <p style="font-size: xx-large;">5.20日 - 6.15日</h3>
+                <p>风情枇杷园·欢乐琵琶宴·琵琶文化馆</h6>-->
+                <p style="font-size: 40px;">安顺 <span style="font-size: 60px;">屯堡</span></p>
+                <p style="font-size: xx-large;">邀您一起来体验！</h1>
+            </div>
+            <div style="position: relative;text-align: right;">
+               <!-- --><img src="images/LOGO1.png">  
+            </div>
+        </div>
+        
+      </div>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">前一个</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">后一个</span>
+    </a>
+</div>
+<!--<div class="news">
+    <ul>
+        <li>
+            <div class="date">
+                <h2>20</h2>
+                <p>2021.06</p>
+            </div>
+            <div class="wenzi"><p>“垷坦枇杷节”开幕众多欢乐活动，等你来加入！</p></div>
+        </li>
+        <li>
+            <div class="date">
+                <h2>16</h2>
+                <p>2021.04</p>
+            </div>
+            <div class="wenzi"><p>一起来采摘！垷坦茶叶季，快叫上你的小伙伴，一起来垷坦采茶叶吧！</p></div>
+        </li>
+    <li style="padding-left:100px;">
+        <img src="images/dian.png" style="padding-top: 10%;">  
+    </li>
+    </ul>
+</div>-->
+
+<div class="middle">
+    <hr>
+    <div class="title">
+        <h1 class="display-4">安顺屯堡</h1>
+        <h4>ANSHUN TUNBAO</h4>
+    </div>
+    <div class="image">
+        <img src="images/lxxt.png"> 
+        <div class="tbsy" style="position: relative;bottom: 10vw;">
+            <div>
+                <img src="images/smbg.png">
+                <a href="tbsy/jdjs.html" style="bottom: 2.5vw;"><p>景点介绍</p></a>
+            </div>
+            <div>
+                <img src="images/smbg.png">
+                <a href="tbsy/lsrw.html" style="bottom: 2.5vw;"><p>历史人物馆</p></a>
+            </div>
+            <div>
+                <img src="images/smbg.png">
+                <a href="tbsy/szfyk.html" style="bottom: 2.5vw;"><p>屯堡非遗库</p></a>
+            </div>
+			<div>
+			    <img src="images/smbg.png">
+			    <a href="tbsy/TECHAN.html" style="bottom: 2.5vw;"><p>屯堡特产展示</p></a>
+			</div>
+        </div>
+    </div>
+    <div class="text">
+    </div>
+    <div>
+        <a href="tbsy/lsrw.html">了解更多</a>
+    </div>
+    <hr>
+</div>
+<!-- <div class="middle">
+    <div class="title">
+        <h1 class="display-4">垷坦概况</h1>
+        <h4>XIANTAN GAIKUANG</h4>
+    </div>
+    <ul class="three">
+        <li>
+            <div>
+                <img src="images/tbgl1.png">
+                <a href="tbgl/wenhua.html"  style="text-decoration: none;"><h3>文化</h3></a>
+                <p class="three_p">垷坦村建村 1000 多年 ，历史悠久，名人辈出。古时称坦清嘉庆年间改为垷坦。</p>
+            </div>
+            <div>
+                <a href="tbgl/wenhua.html">了解更多</a>
+            </div>
+        </li>
+        <li>
+            <div>
+                <img src="images/tbgl2.png">
+                <a href="tbgl/feiyi.html"  style="text-decoration: none;"><h3>非遗</h3></a>
+                <p class="three_p">垷坦村有着丰富的非物质文化产物。龙亭、銮驾等。</p>
+            </div>
+            <div>
+                <a href="tbgl/feiyi.html">了解更多</a>
+            </div>
+        </li>
+        <li>
+            <div>
+                <img src="images/tbgl3.png">
+                <a href="tbgl/chanpin.html"  style="text-decoration: none;"><h3>产品</h3></a>
+                <p class="three_p">垷坦村在悠久的历史条件下，诞生了许多自然产品。枇杷、茶叶等都是当季特色。</p>
+            </div>
+            <div>
+                <a href="tbgl/chanpin.html">了解更多</a>
+            </div>
+        </li>
+    </ul>
+</div>
+    
+    <div class="middle">
+        <hr>
+        <div class="title">
+            <h1 class="display-4">线上文化馆</h1>
+            <h4>XIANSHANG WENHUAGUAN</h4>
+        </div>
+        <ul class="icon">
+            <li>
+                <a href="szwh/stg.html"><img src="images/stg.png">
+                <p class="three_p">视听馆</p></a>
+            </li>
+            <li>
+                <a href="szwh/zbj.html"><img src="images/zbj.png">
+                <p class="three_p">直播间</p></a>
+            </li>
+            <li>
+                <a href="szwh/jlsh.html"><img src="images/jlsh.png">
+                <p class="three_p">记录生活</p></a>
+            </li>
+            <li>
+                <a href="https://0.u.h5mc.com/c/ckat/hter/index.html" target="_blank"><img src="images/mgd.png">
+                <p class="three_p">垷坦动画</p></a>
+            </li>
+        </ul>
+    </div> -->
+    <div class="middle">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6" style="background-color: #f4f4f4;padding: 20px!important;">
+                    <a href="tbwc/wccp.html" style="text-decoration: none;">
+                    <div class="title" style="text-align: left;">
+                        <h1>伴手礼</h1>
+                        <h5 style="color: gray;">BANSHOULI</h5>
+                    </div>
+                    <div class="container-fluid" >
+                        <div class="row">
+                          <div class="col-sm-6" style="padding-right: 20px!important;">
+                            <img src="images/11.png" style="width: 101%;">
+							<img src="images/22.png" style="width: 101%;">
+							<img src="images/33.png" style="width: 101%;">
+							<img src="images/44.png" style="width: 101%;">
+							
+							<img src="images/77.png" style="width: 101%;">
+                            <div class="text" style="color: gray;">
+								<p>安顺木雕，省级非物质文化遗产代表性项目。它以雕刻安顺地戏面具为主，其风格或古朴或怪诞或粗狂或神秘。木雕艺术是安顺屯堡文化的传承和历史演变的见证。明初“调北征南”后，伴随着卫所制度、军屯制度在黔中地区的落地生根，匠户制度亦进入屯军驻所，大量的匠人包括手艺精湛的木匠亦随之而来，这成为木雕艺术特殊的历史制度渊源和社会文化基础。</p>
+                            </div>
+                        </div>
+                          <div class="col-sm-6" >
+							  <img src="images/111.png" style="width: 100%;">
+							  <img src="images/222.png" style="width: 100%;">
+                            <div class="text" style="color: gray;">
+								<p>蜡染是我国古老的少数民族民间传统纺织印染手工艺，古称蜡，与绞缬（扎染）、夹缬（镂空印花）并称为我国古代三大印花技艺。安顺蜡染，中国国家地理标志产品。贵州安顺蜡染被誉为“东方第一染”，安顺也被誉为“蜡染之乡”。蜡染是用蜡刀蘸熔蜡绘花于布后以蓝靛浸染，既染去蜡，布面就呈现出蓝底白花或白底蓝花的多种图案，同时，在浸染中，作为防染剂的蜡自然龟裂，使布面呈现特殊的“布纹”，尤具魅力。由于蜡染图案丰富，色调素雅，风格独特，用于制作服装服饰和各种生活实用品，显得朴实大方、清新悦目，富有民族特色。</p>
+                            </div>
+                        </div>
+						<!--<div class="col-sm-6" style="padding-right: 20px!important;margin-top: -435px;margin-left: 480px;background-color: #f4f4f4">
+						    <img src="images/11.png" style="width: 101%;">
+							<img src="images/22.png" style="width: 101%;">
+						    <div class="text" style="color: gray;">
+						        <p>功效：1、提神益思，缓解疲劳2、消食去腻、减肥健美3、解热防暑、杀菌消炎4、抗肿瘤、预防老化功效。</p>
+						    </div>
+						</div>-->
+						
+						
+                        </div>
+					</div>
+                    </a>
+                </div>
+            
+                <!--<img src="images/qrcode.png"  style="width: 100%;">-->
+				<div class="col-sm-6" style="padding-left: 10px!important;margin-top: 50px;">
+				        <img src="images/phone2.png"  style="width: 100%;">
+				</div>
+            </div>
+        </div>   
+    </div>
+    <div class="footer"><script>$(".footer").load("../foot.html")</script></div>
+</body>
+</html>
